@@ -157,4 +157,113 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('detayAciklama').textContent = "Lütfen tüm ilanlar sayfasına dönerek geçerli bir ilan seçiniz.";
         }
     }
+
+    // --- D. FAVORİLER (LOCAL STORAGE) İŞLEMİ ---
+    
+    // 1. Tarayıcı hafızasından favorileri getiren fonksiyon
+    function favorileriGetir() {
+        const favoriler = localStorage.getItem('korfezFavoriler');
+        return favoriler ? JSON.parse(favoriler) : [];
+    }
+
+    // 2. Tarayıcı hafızasına favorileri kaydeden fonksiyon
+    function favorileriKaydet(favoriler) {
+        localStorage.setItem('korfezFavoriler', JSON.stringify(favoriler));
+        favoriArayuzunuGuncelle();
+    }
+
+    // 3. Menüdeki sayacı ve sağdan açılan çekmecenin içini güncelleyen fonksiyon
+    function favoriArayuzunuGuncelle() {
+        const favoriler = favorileriGetir();
+        
+        // Menüdeki kırmızı sayacı güncelle (Geri Bildirim Kuralı)[cite: 1]
+        const favoriSayaci = document.getElementById('favoriSayaci');
+        if(favoriSayaci) {
+            favoriSayaci.textContent = favoriler.length;
+        }
+
+        // Çekmece içini çiz
+        const favorilerListesi = document.getElementById('favorilerListesi');
+        if(favorilerListesi) {
+            if(favoriler.length === 0) {
+                favorilerListesi.innerHTML = '<p class="text-muted text-center mt-5">Henüz favoriye eklediğiniz bir ilan bulunmuyor.</p>';
+            } else {
+                favorilerListesi.innerHTML = ''; // İçini temizle
+                // Favorideki her bir ilan ID'si için küçük bir kart oluştur
+                favoriler.forEach(id => {
+                    const ilan = ilanVerileri[id];
+                    if(ilan) {
+                        favorilerListesi.innerHTML += `
+                            <div class="card mb-3 shadow-sm border-0 bg-light">
+                                <div class="row g-0 align-items-center">
+                                    <div class="col-4">
+                                        <img src="${ilan.resim}" class="img-fluid rounded h-100" style="object-fit: cover; min-height: 80px;" alt="İlan Resmi">
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="card-body p-2">
+                                            <h6 class="card-title fw-bold mb-1" style="font-size: 0.85rem;">${ilan.baslik}</h6>
+                                            <p class="text-primary fw-bold mb-1 small">${ilan.fiyat}</p>
+                                            <div class="d-flex gap-1">
+                                                <a href="detay.html?id=${id}" class="btn btn-sm btn-outline-primary flex-grow-1" style="font-size: 0.75rem;">İncele</a>
+                                                <button onclick="favoridenCikar('${id}')" class="btn btn-sm btn-danger" style="font-size: 0.75rem;"><i class="bi bi-trash"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+            }
+        }
+    }
+
+    // 4. Çekmecedeki Çöp Kutusuna basınca ilanı silen fonksiyon
+    window.favoridenCikar = function(id) {
+        let favoriler = favorileriGetir();
+        favoriler = favoriler.filter(favId => favId !== id);
+        favorileriKaydet(favoriler);
+        
+        // Eğer detay sayfasındayken siliyorsak, o sayfadaki butonun rengini de eski haline getir
+        const favoriyeEkleBtn = document.getElementById('favoriyeEkleBtn');
+        const urlParams = new URLSearchParams(window.location.search);
+        if(favoriyeEkleBtn && urlParams.get('id') === id) {
+            favoriyeEkleBtn.innerHTML = '<i class="bi bi-heart"></i> Favorilere Ekle';
+            favoriyeEkleBtn.classList.replace('btn-danger', 'btn-outline-danger');
+        }
+    };
+
+    // Sayfa her yüklendiğinde sayacı ve çekmeceyi kontrol et
+    favoriArayuzunuGuncelle();
+
+    // 5. Detay sayfasındaki "Favoriye Ekle" butonuna basılma olayı (Geri Bildirim Kuralı)[cite: 1]
+    const favoriyeEkleBtn = document.getElementById('favoriyeEkleBtn');
+    if(favoriyeEkleBtn && document.getElementById('detayBaslik')) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const ilanId = urlParams.get('id');
+
+        // Sayfa ilk açıldığında ilan zaten favorilerdeyse butonu kırmızı yap
+        let currentFavoriler = favorileriGetir();
+        if(currentFavoriler.includes(ilanId)) {
+            favoriyeEkleBtn.innerHTML = '<i class="bi bi-heart-fill"></i> Favorilerde';
+            favoriyeEkleBtn.classList.replace('btn-outline-danger', 'btn-danger');
+        }
+
+        // Butona tıklandığında işlemi yap
+        favoriyeEkleBtn.addEventListener('click', function() {
+            let favlar = favorileriGetir();
+            
+            if(favlar.includes(ilanId)) {
+                // Listede varsa çıkar
+                window.favoridenCikar(ilanId);
+            } else {
+                // Listede yoksa ekle
+                favlar.push(ilanId);
+                favorileriKaydet(favlar);
+                // Butonu görsel olarak doldur
+                this.innerHTML = '<i class="bi bi-heart-fill"></i> Favorilerde';
+                this.classList.replace('btn-outline-danger', 'btn-danger');
+            }
+        });
+    }
 });

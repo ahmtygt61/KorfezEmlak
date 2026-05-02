@@ -19,9 +19,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="ilanlar.html">Tüm İlanlar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ilanlar.html">Tüm İlanlar</a></li>
+                    <!-- YENİ EKLENEN FAVORİLER BUTONU -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#favorilerOffcanvas">
+                            Favorilerim <span class="badge bg-danger rounded-pill" id="favoriSayaci">0</span>
+                        </a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                </ul>
                 </ul>
             </div>
         </div>
@@ -100,7 +108,7 @@
                     <img src="img/ev3.jpg" class="card-img-top" alt="Ev 3">
                     <div class="card-body">
                         <h6 class="card-title fw-bold">Yuvam Akarca Manzaralı</h6>
-                        <h5 class="text-primary fw-bold mt-2">15.000 TL / Ay</h5>
+                        <h5 class="text-primary fw-bold mt-2">15.000 TL </h5>
                         <p class="card-text text-muted small">Deniz manzaralı kiralık.</p>
                     </div>
                     <div class="card-footer bg-white border-top-0 p-3 pt-0">
@@ -184,6 +192,18 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+
+    <!-- Favoriler Çekmecesi (Offcanvas) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="favorilerOffcanvas" aria-labelledby="favorilerOffcanvasLabel">
+        <div class="offcanvas-header bg-light border-bottom">
+            <h5 class="offcanvas-title fw-bold" id="favorilerOffcanvasLabel"><i class="bi bi-heart-fill text-danger"></i> Favorilerim</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Kapat"></button>
+        </div>
+        <div class="offcanvas-body" id="favorilerListesi">
+            <!-- JavaScript buraya favori ilanları otomatik çizecek -->
+            <p class="text-muted text-center mt-5">Henüz favoriye eklediğiniz bir ilan bulunmuyor.</p>
         </div>
     </div>
 

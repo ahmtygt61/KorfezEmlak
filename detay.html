@@ -21,7 +21,13 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
                     <li class="nav-item"><a class="nav-link" href="ilanlar.html">Tüm İlanlar</a></li>
-                     <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                    <!-- YENİ EKLENEN FAVORİLER BUTONU -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#favorilerOffcanvas">
+                            Favorilerim <span class="badge bg-danger rounded-pill" id="favoriSayaci">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
                 </ul>
             </div>
         </div>
@@ -55,10 +61,24 @@
                             <li class="list-group-item bg-transparent d-flex justify-content-between"><strong>Oda Sayısı:</strong> <span id="detayOda">-</span></li>
                             <li class="list-group-item bg-transparent d-flex justify-content-between"><strong>Konum:</strong> <span id="detayKonum">-</span></li>
                         </ul>
+                        <!-- YENİ EKLENEN FAVORİ BUTONU -->
+                        <button id="favoriyeEkleBtn" class="btn btn-outline-danger w-100 fw-bold mb-3"><i class="bi bi-heart"></i> Favorilere Ekle</button>
                         <a href="iletisim.html" class="btn btn-outline-primary w-100">İletişim</a>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Favoriler Çekmecesi (Offcanvas) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="favorilerOffcanvas" aria-labelledby="favorilerOffcanvasLabel">
+        <div class="offcanvas-header bg-light border-bottom">
+            <h5 class="offcanvas-title fw-bold" id="favorilerOffcanvasLabel"><i class="bi bi-heart-fill text-danger"></i> Favorilerim</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Kapat"></button>
+        </div>
+        <div class="offcanvas-body" id="favorilerListesi">
+            <!-- JavaScript buraya favori ilanları otomatik çizecek -->
+            <p class="text-muted text-center mt-5">Henüz favoriye eklediğiniz bir ilan bulunmuyor.</p>
         </div>
     </div>
 
