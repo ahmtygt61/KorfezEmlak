@@ -1,0 +1,48 @@
+/* Genel Ayarlar (Basitlik ve Tutarlılık Prensibi)[cite: 1] */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/evbaslik.jpg') center/cover no-repeat;
+    height: 60vh;
+    min-height: 400px;
+}
+
+.search-form {
+    border: 1px solid #e0e0e0;
+}
+
+.search-form select:focus, .search-form button:focus {
+    box-shadow: none;
+    border-color: #0d6efd;
+}
+
+/* Kart Efektleri (Kullanıcıya görsel Geri Bildirim - Feedback kuralı)[cite: 1] */
+.property-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.property-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover; /* Resimlerin orantılı kırpılmasını sağlar */
+}
+
+/* Buton Özelleştirmeleri (Sağlanabilirlik - Affordance kuralı)[cite: 1] */
+.btn-primary {
+    padding: 10px 20px;
+    border-radius: 5px;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlan Detayı - Körfez Emlak</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <!-- Ortak Menü -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">KÖRFEZ EMLAK</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ilanlar.html">Tüm İlanlar</a></li>
+                     <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <!-- İçerik Alanı -->
+    <div class="container my-5 flex-grow-1">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Ana Sayfa</a></li>
+                <li class="breadcrumb-item"><a href="ilanlar.html" class="text-decoration-none">Tüm İlanlar</a></li>
+                <li class="breadcrumb-item active" aria-current="page" id="detayBreadcrumb">İlan Yükleniyor...</li>
+            </ol>
+        </nav>
+
+        <div class="row g-5 mt-2">
+            <div class="col-lg-8">
+                <!-- Resim için ID eklendi -->
+                <img id="detayResim" src="" class="img-fluid rounded shadow w-100" alt="Daire Görseli" onerror="this.src='https://via.placeholder.com/800x500?text=Görsel+Bulunamadı'">
+                
+                <h3 class="mt-4 fw-bold" id="detayBaslik">Yükleniyor...</h3>
+                <p id="detayAciklama">İlan detayları yükleniyor, lütfen bekleyin...</p>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card shadow-sm border-0 bg-light">
+                    <div class="card-body">
+                        <h2 class="text-primary fw-bold mb-4" id="detayFiyat">... TL</h2>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent d-flex justify-content-between"><strong>Brüt M²:</strong> <span id="detayM2">-</span></li>
+                            <li class="list-group-item bg-transparent d-flex justify-content-between"><strong>Oda Sayısı:</strong> <span id="detayOda">-</span></li>
+                            <li class="list-group-item bg-transparent d-flex justify-content-between"><strong>Konum:</strong> <span id="detayKonum">-</span></li>
+                        </ul>
+                        <a href="iletisim.html" class="btn btn-outline-primary w-100">İletişim</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ortak Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-0"> 2026 Körfez Emlak Projesi. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

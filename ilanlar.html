@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tüm İlanlar - Körfez Emlak</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <!-- Menü (Navbar) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">KÖRFEZ EMLAK</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="ilanlar.html">Tüm İlanlar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <!-- FİLTRELEME ALANI -->
+        <div class="bg-white p-3 rounded shadow-sm mb-4 border">
+            <form id="searchForm" class="row g-3 align-items-end">
+                <div class="col-md-4">
+                    <label class="form-label fw-bold text-muted small">Konum</label>
+                    <select class="form-select" id="locationSelect">
+                        <option value="">Tümü</option>
+                        <option value="yahyakaptan">Yahyakaptan</option>
+                        <option value="kartepe">Kartepe</option>
+                        <option value="yuvam">Yuvam Akarca</option>
+                        <option value="basiskele">Başiskele</option>
+                        <option value="izmit">İzmit Merkez</option>
+                        <option value="derince">Derince</option>
+                        <option value="sapanca">Sapanca</option>
+                        <option value="golcuk">Gölcük</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-bold text-muted small">Emlak Tipi</label>
+                    <select class="form-select" id="typeSelect">
+                        <option value="">Tümü</option>
+                        <option value="daire">Daire</option>
+                        <option value="villa">Villa</option>
+                        <option value="isyeri">İş Yeri</option>
+                        <option value="arsa">Arsa</option>
+                        <option value="tesis">Tesis</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary w-100 fw-bold">Sonuçları Filtrele</button>
+                </div>
+            </form>
+        </div>
+    
+        <!-- İlanlar Izgarası (row-cols-md-2 row-cols-lg-4 ile her satırda 4 ilan) -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            
+            <!-- İlan 1 (Detay Sayfasına Bağlı) -->
+            <div class="col filter-item" data-konum="yahyakaptan" data-tip="daire">
+                <div class="card h-100 shadow-sm property-card">
+                    <img src="img/ev1.jpg" class="card-img-top" alt="Ev 1">
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">Yahyakaptan Lüks 3+1</h6>
+                        <h5 class="text-primary fw-bold mt-2">3.250.000 TL</h5>
+                        <p class="card-text text-muted small">Site içi sıfır daire.</p>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 p-3 pt-0">
+                        <a href="detay.html?id=1" class="btn btn-outline-primary w-100 btn-sm">Detayları Gör</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İlan 2 -->
+            <div class="col filter-item" data-konum="kartepe" data-tip="villa">
+                <div class="card h-100 shadow-sm property-card">
+                    <img src="img/ev2.jpg" class="card-img-top" alt="Ev 2">
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">Kartepe Müstakil Villa</h6>
+                        <h5 class="text-primary fw-bold mt-2">8.500.000 TL</h5>
+                        <p class="card-text text-muted small">Doğa manzaralı, geniş bahçeli.</p>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 p-3 pt-0">
+                        <a href="detay.html?id=2" class="btn btn-outline-primary w-100 btn-sm">Detayları Gör</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İlan 3 -->
+            <div class="col filter-item" data-konum="yuvam" data-tip="daire">
+                <div class="card h-100 shadow-sm property-card">
+                    <img src="img/ev3.jpg" class="card-img-top" alt="Ev 3">
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">Yuvam Akarca Manzaralı</h6>
+                        <h5 class="text-primary fw-bold mt-2">15.000 TL / Ay</h5>
+                        <p class="card-text text-muted small">Deniz manzaralı kiralık.</p>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 p-3 pt-0">
+                        <a href="detay.html?id=3" class="btn btn-outline-primary w-100 btn-sm">Detayları Gör</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İlan 4 -->
+            <div class="col filter-item" data-konum="basiskele" data-tip="daire">
+                <div class="card h-100 shadow-sm property-card">
+                    <img src="img/ev4.jpeg" class="card-img-top" alt="Ev 4">
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">Başiskele Havuzlu 4+1</h6>
+                        <h5 class="text-primary fw-bold mt-2">4.100.000 TL</h5>
+                        <p class="card-text text-muted small">Ortak yüzme havuzlu lüks site.</p>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 p-3 pt-0">
+                        <a href="detay.html?id=4" class="btn btn-outline-primary w-100 btn-sm">Detayları Gör</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İlan 5 -->
+            <div class="col filter-item" data-konum="izmit" data-tip="isyeri">
+                <div class="card h-100 shadow-sm property-card">
+                    <img src="img/ev5.jpg" class="card-img-top" alt="Ev 5">
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">İzmit Merkez Ofis</h6>
+                        <h5 class="text-primary fw-bold mt-2">25.000 TL / Ay</h5>
+                        <p class="card-text text-muted small">Çarşı içi, ulaşıma yakın iş yeri.</p>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 p-3 pt-0">
+                        <a href="detay.html?id=5" class="btn btn-outline-primary w-100 btn-sm">Detayları Gör</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İlan 6 -->
+            <div class="col filter-item" data-konum="derince" data-tip="arsa">
+                <div class="card h-100 shadow-sm property-card">
+                    <img src="img/ev6.jpg" class="card-img-top" alt="Ev 6">
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">Derince Yatırımlık Arsa</h6>
+                        <h5 class="text-primary fw-bold mt-2">1.850.000 TL</h5>
+                        <p class="card-text text-muted small">İmara açık 500m² köşe parsel.</p>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 p-3 pt-0">
+                        <a href="detay.html?id=6" class="btn btn-outline-primary w-100 btn-sm">Detayları Gör</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İlan 7 -->
+            <div class="col filter-item" data-konum="sapanca" data-tip="tesis">
+                <div class="card h-100 shadow-sm property-card">
+                    <img src="img/ev7.jpg" class="card-img-top" alt="Ev 7">
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">Sapanca Gölü Kenarı</h6>
+                        <h5 class="text-primary fw-bold mt-2">12.000.000 TL</h5>
+                        <p class="card-text text-muted small">Göl manzaralı butik otel projesi.</p>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 p-3 pt-0">
+                        <a href="detay.html?id=7" class="btn btn-outline-primary w-100 btn-sm">Detayları Gör</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İlan 8 -->
+            <div class="col filter-item" data-konum="golcuk" data-tip="daire">
+                <div class="card h-100 shadow-sm property-card">
+                    <img src="img/ev8.jpg" class="card-img-top" alt="Ev 8">
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">Gölcük 2+1 Fırsat Daire</h6>
+                        <h5 class="text-primary fw-bold mt-2">1.950.000 TL</h5>
+                        <p class="card-text text-muted small">Acil satılık, içi yenilenmiş daire.</p>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 p-3 pt-0">
+                        <a href="detay.html?id=8" class="btn btn-outline-primary w-100 btn-sm">Detayları Gör</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-0">© 2026 Körfez Emlak Projesi. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Körfez Emlak | Güvenilir Gayrimenkul Danışmanlığı</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Kendi CSS Dosyamız -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Menü (Navbar) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">KÖRFEZ EMLAK</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                     <li class="nav-item"><a class="nav-link" href="ilanlar.html">Tüm İlanlar</a></li>
+                    <!-- İlan detay sayfasına menüden değil, ilanlardaki butonlardan gidilecek -->
+                     <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-white text-center d-flex align-items-center">
+        <div class="container hero-content">
+            <h1 class="display-4 fw-bold mb-4">Hayalinizdeki Evi Bulun</h1>
+            <p class="lead mb-5">Geniş portföyümüzle en doğru yatırımı yapmanıza yardımcı oluyoruz.</p>
+        </div>
+    </header>
+
+    <!-- Öne Çıkan İlanlar -->
+    <section class="container my-5 py-5">
+        <h2 class="text-center mb-5 fw-bold">Öne Çıkan Fırsatlar</h2>
+        <div class="row g-4">
+            
+            <!-- İlan Kartı 1 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm property-card">
+                    <!-- Görsel yüklenmezse diye alt etiketi kritik[cite: 1] -->
+                    <img src="img/ev1.jpg" class="card-img-top" alt="Yahyakaptan Lüks Daire" onerror="this.src='https://via.placeholder.com/400x250?text=Görsel+Bulunamadı'">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Yahyakaptan'da Lüks 3+1</h5>
+                        <p class="card-text text-muted">Merkezi konumda, site içerisinde, güvenlikli ve havuzlu sıfır daire.</p>
+                       <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fs-5 fw-bold text-primary">3.250.000 TL</span>
+                            <a href="detay.html?id=1" class="btn btn-outline-primary btn-sm px-2">İncele</a>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 d-flex justify-content-around text-muted small">
+                        <span><i class="bi bi-arrows-fullscreen"></i> 140 m²</span>
+                        <span><i class="bi bi-door-open"></i> 3+1</span>
+                        <span><i class="bi bi-building"></i> 2. Kat</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İlan Kartı 2 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm property-card">
+                    <img src="img/ev2.jpg" class="card-img-top" alt="Kartepe Doğa Manzaralı Villa" onerror="this.src='https://via.placeholder.com/400x250?text=Görsel+Bulunamadı'">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Kartepe'de Müstakil Villa</h5>
+                        <p class="card-text text-muted">Doğa ile iç içe, kendine ait geniş bahçesi ve kış bahçesi bulunan villa.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fs-5 fw-bold text-primary">8.500.000 TL</span>
+                            <a href="detay.html?id=2" class="btn btn-outline-primary btn-sm px-2">İncele</a>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 d-flex justify-content-around text-muted small">
+                        <span><i class="bi bi-arrows-fullscreen"></i> 220 m²</span>
+                        <span><i class="bi bi-door-open"></i> 4+2</span>
+                        <span><i class="bi bi-building"></i> Müstakil</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İlan Kartı 3 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm property-card">
+                    <img src="img/ev3.jpg" class="card-img-top" alt="Yuvam Akarca Kiralık Daire" onerror="this.src='https://via.placeholder.com/400x250?text=Görsel+Bulunamadı'">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Yuvam Akarca Manzaralı</h5>
+                        <p class="card-text text-muted">Ulaşıma yakın, önü kapanmaz deniz manzaralı ferah kiralık daire.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fs-5 fw-bold text-primary">15.000 TL</span>
+                            <a href="detay.html?id=3" class="btn btn-outline-primary btn-sm px-2">İncele</a>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 d-flex justify-content-around text-muted small">
+                        <span><i class="bi bi-arrows-fullscreen"></i> 110 m²</span>
+                        <span><i class="bi bi-door-open"></i> 2+1</span>
+                        <span><i class="bi bi-building"></i> 5. Kat</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="text-center mt-5">
+            <a href="ilanlar.html" class="btn btn-primary btn-lg fw-bold shadow-sm">Tüm İlanları İncele <i class="bi bi-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-0">© 2026 Körfez Emlak Projesi. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & JS[cite: 1] -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
