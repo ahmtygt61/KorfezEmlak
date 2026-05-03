@@ -86,14 +86,26 @@
     </div>
 
     <!-- Favoriler Çekmecesi (Offcanvas) -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="favorilerOffcanvas" aria-labelledby="favorilerOffcanvasLabel">
-        <div class="offcanvas-header bg-light border-bottom">
-            <h5 class="offcanvas-title fw-bold" id="favorilerOffcanvasLabel"><i class="bi bi-heart-fill text-danger"></i> Favorilerim</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Kapat"></button>
+    <!-- ADIM 1: Ana kapsayıcı div'e style eklendi (Arkaplan lacivert, yazı beyaz) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="favorilerOffcanvas" aria-labelledby="favorilerOffcanvasLabel" style="background-color: var(--primary-dark); color: white;">
+        
+        <!-- ADIM 2: Header kısmındaki bg-light silindi, alt çizgi rengi altın yapıldı -->
+        <div class="offcanvas-header border-bottom" style="border-color: var(--accent-gold) !important;">
+            
+            <!-- ADIM 3: Başlık yazısı ve ikon altın rengine boyandı -->
+            <h5 class="offcanvas-title fw-bold" id="favorilerOffcanvasLabel" style="color: var(--accent-gold);">
+                <i class="bi bi-heart-fill"></i> Favorilerim
+            </h5>
+            
+            <!-- ADIM 4: Kapatma çarpısı (X) koyu arka planda görünmesi için beyaz yapıldı (btn-close-white eklendi) -->
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Kapat"></button>
         </div>
+        
         <div class="offcanvas-body" id="favorilerListesi">
             <!-- JavaScript buraya favori ilanları otomatik çizecek -->
-            <p class="text-muted text-center mt-5">Henüz favoriye eklediğiniz bir ilan bulunmuyor.</p>
+            <p class="text-center mt-5">
+                <span style="color: #C5A059 !important; font-weight: 600; opacity: 1 !important;">Henüz favoriye eklediğiniz bir ilan bulunmuyor.</span>
+            </p>
         </div>
     </div>
 

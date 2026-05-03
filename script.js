@@ -186,8 +186,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const favorilerListesi = document.getElementById('favorilerListesi');
         if(favorilerListesi) {
             if(favoriler.length === 0) {
-                favorilerListesi.innerHTML = '<p class="text-muted text-center mt-5">Henüz favoriye eklediğiniz bir ilan bulunmuyor.</p>';
-            } else {
+                favorilerListesi.innerHTML = '<p class="text-center mt-5" style="color: #C5A059 !important; font-weight: 500;">Henüz favoriye eklediğiniz bir ilan bulunmuyor.</p>';
+                } else {
                 favorilerListesi.innerHTML = ''; // İçini temizle
                 // Favorideki her bir ilan ID'si için küçük bir kart oluştur
                 favoriler.forEach(id => {

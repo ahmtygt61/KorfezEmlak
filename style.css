@@ -1,48 +1,102 @@
-/* Genel Ayarlar (Basitlik ve Tutarlılık Prensibi)[cite: 1] */
+/* Ana Renk Değişkenlerimiz */
+:root {
+    --primary-dark: #1A365D; /* Koyu Lacivert */
+    --accent-gold: #C5A059;  /* Altın/Ahşap */
+    --text-muted: #6c757d;
+}
+
+/* Genel Font ve Arka Plan */
 body {
+    background-color: #F8F9FA;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
-/* Hero Section */
+/* Menü (Navbar) Özelleştirmesi */
+.navbar {
+    background-color: var(--primary-dark) !important;
+    border-bottom: 3px solid var(--accent-gold);
+}
+.navbar-brand {
+    color: var(--accent-gold) !important;
+    letter-spacing: 1.5px;
+    font-size: 1.5rem;
+}
+.nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-gold) !important;
+}
+
+/* Hero (Karşılama) Bölümü */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/evbaslik.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.7)), url('img/ev1.jpg') center/cover;
     height: 60vh;
-    min-height: 400px;
+    display: flex;
+    align-items: center;
+    color: white;
+    border-bottom: 5px solid var(--accent-gold);
 }
 
-.search-form {
-    border: 1px solid #e0e0e0;
+/* Buton Özelleştirmesi */
+.btn-primary {
+    background-color: var(--accent-gold) !important;
+    border-color: var(--accent-gold) !important;
+    color: #fff;
+    transition: all 0.3s;
+}
+.btn-primary:hover {
+    background-color: #a88746 !important;
+    transform: scale(1.05);
 }
 
-.search-form select:focus, .search-form button:focus {
-    box-shadow: none;
-    border-color: #0d6efd;
+.btn-outline-dark {
+    color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+.btn-outline-dark:hover {
+    background-color: var(--primary-dark);
+    color: white;
 }
 
-/* Kart Efektleri (Kullanıcıya görsel Geri Bildirim - Feedback kuralı)[cite: 1] */
-.property-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: none;
+/* İlan Kartları İnce İşçilik */
+.card {
     border-radius: 10px;
     overflow: hidden;
 }
-
-.property-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(26, 54, 93, 0.2) !important;
+    transition: all 0.4s ease;
+}
+.price-text {
+    color: var(--primary-dark);
+    font-size: 1.4rem;
+}
+.badge-custom {
+    background-color: var(--accent-gold);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: bold;
 }
 
-.card-img-top {
-    height: 250px;
-    object-fit: cover; /* Resimlerin orantılı kırpılmasını sağlar */
+/* Ana Sayfa Kayan Görsel (Carousel) Ayarları */
+.carousel-img {
+    height: 65vh; /* Ekranın yüzde 65'ini kaplar, tam kararındadır */
+    object-fit: cover; /* Resmin orantısını bozmadan, ezmeden ekrana yayar */
+    filter: brightness(0.45); /* Resmi %55 karartır ki üstündeki altın rengi yazılar patlasın */
 }
 
-/* Buton Özelleştirmeleri (Sağlanabilirlik - Affordance kuralı)[cite: 1] */
-.btn-primary {
-    padding: 10px 20px;
-    border-radius: 5px;
+/* Yazıları tam ortaya sabitlemek için */
+.carousel-caption {
+    bottom: 0;
+    top: 0; 
+}
+
+/* Yazılara profesyonel bir gölge vererek okunabilirliği artırır */
+.shadow-text {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
 }

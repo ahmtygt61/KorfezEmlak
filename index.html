@@ -35,11 +35,59 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-section text-white text-center d-flex align-items-center">
-        <div class="container hero-content">
-            <h1 class="display-4 fw-bold mb-4">Hayalinizdeki Evi Bulun</h1>
-            <p class="lead mb-5">Geniş portföyümüzle en doğru yatırımı yapmanıza yardımcı oluyoruz.</p>
+    <!-- Hero Section (Kayan Görsel / Carousel) -->
+    <header class="position-relative border-bottom" style="border-color: var(--accent-gold) !important; border-width: 4px !important;">
+        <!-- carousel-fade sınıfı resimlerin kayarak değil, yumuşakça silinerek değişmesini sağlar -->
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            
+            <!-- Alt kısımdaki minik çizgi göstergeleri -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- Dönen Görseller ve Yazılar -->
+            <div class="carousel-inner">
+                
+                <!-- 1. Görsel -->
+                <div class="carousel-item active" data-bs-interval="1500">
+                    <img src="img/ev1.jpg" class="d-block w-100 carousel-img" alt="Yahyakaptan Lüks Daire">
+                    <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                        <h1 class="display-4 fw-bold mb-4 shadow-text" style="color: var(--accent-gold);">Hayalinizdeki Evi Bulun</h1>
+                        <p class="lead mb-5 shadow-text text-white">Geniş portföyümüzle en doğru yatırımı yapmanıza yardımcı oluyoruz.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Görsel -->
+                <div class="carousel-item" data-bs-interval="1500">
+                    <img src="img/ev2.jpg" class="d-block w-100 carousel-img" alt="Kartepe Doğa Manzaralı Villa">
+                    <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                        <h1 class="display-4 fw-bold mb-4 shadow-text" style="color: var(--accent-gold);">Doğaya Açılan Kapınız</h1>
+                        <p class="lead mb-5 shadow-text text-white">Kartepe ve Başiskele'deki müstakil yaşam fırsatlarını keşfedin.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Görsel -->
+                <div class="carousel-item" data-bs-interval="1500">
+                    <img src="img/ev3.jpg" class="d-block w-100 carousel-img" alt="Yuvam Akarca Kiralık Daire">
+                    <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                        <h1 class="display-4 fw-bold mb-4 shadow-text" style="color: var(--accent-gold);">Eşsiz Manzaralar</h1>
+                        <p class="lead mb-5 shadow-text text-white">Güne huzurla uyanacağınız prestijli lokasyonlar.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sağ/Sol Ok Butonları -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Önceki</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Sonraki</span>
+            </button>
         </div>
     </header>
 
@@ -116,14 +164,26 @@
     </section>
 
     <!-- Favoriler Çekmecesi (Offcanvas) -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="favorilerOffcanvas" aria-labelledby="favorilerOffcanvasLabel">
-        <div class="offcanvas-header bg-light border-bottom">
-            <h5 class="offcanvas-title fw-bold" id="favorilerOffcanvasLabel"><i class="bi bi-heart-fill text-danger"></i> Favorilerim</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Kapat"></button>
+    <!-- ADIM 1: Ana kapsayıcı div'e style eklendi (Arkaplan lacivert, yazı beyaz) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="favorilerOffcanvas" aria-labelledby="favorilerOffcanvasLabel" style="background-color: var(--primary-dark); color: white;">
+        
+        <!-- ADIM 2: Header kısmındaki bg-light silindi, alt çizgi rengi altın yapıldı -->
+        <div class="offcanvas-header border-bottom" style="border-color: var(--accent-gold) !important;">
+            
+            <!-- ADIM 3: Başlık yazısı ve ikon altın rengine boyandı -->
+            <h5 class="offcanvas-title fw-bold" id="favorilerOffcanvasLabel" style="color: var(--accent-gold);">
+                <i class="bi bi-heart-fill"></i> Favorilerim
+            </h5>
+            
+            <!-- ADIM 4: Kapatma çarpısı (X) koyu arka planda görünmesi için beyaz yapıldı (btn-close-white eklendi) -->
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Kapat"></button>
         </div>
+        
         <div class="offcanvas-body" id="favorilerListesi">
             <!-- JavaScript buraya favori ilanları otomatik çizecek -->
-            <p class="text-muted text-center mt-5">Henüz favoriye eklediğiniz bir ilan bulunmuyor.</p>
+            <p class="text-center mt-5">
+                <span style="color: #C5A059 !important; font-weight: 600; opacity: 1 !important;">Henüz favoriye eklediğiniz bir ilan bulunmuyor.</span>
+            </p>
         </div>
     </div>
 
