@@ -1,6 +1,4 @@
-// ==========================================
 // 1. İLAN VERİLERİ (Mini Veritabanımız)
-// ==========================================
 const ilanVerileri = {
     "1": {
         baslik: "Yahyakaptan'da Lüks 3+1",
@@ -21,8 +19,8 @@ const ilanVerileri = {
         aciklama: "Doğa ile iç içe, kendine ait geniş bahçesi ve kış bahçesi bulunan harika bir villa. Temiz havası ve Kartepe manzarasıyla huzurlu bir yaşam sunar."
     },
     "3": {
-        baslik: "Yuvam Akarca Manzaralı",
-        fiyat: "15.000 TL / Ay",
+        baslik: "Yuvam Akarca Manzaralı Kiralık Daire",
+        fiyat: "15.000 TL",
         m2: "110",
         oda: "2+1",
         konum: "Yuvam Akarca",
@@ -39,8 +37,8 @@ const ilanVerileri = {
         aciklama: "Başiskele sahile inen yolda, nezih bir site içerisinde sosyal donatıları tam, ebeveyn banyolu geniş aile evi."
     },
     "5": {
-        baslik: "İzmit Merkez Ofis",
-        fiyat: "25.000 TL / Ay",
+        baslik: "İzmit Merkez Kiralık Ofis",
+        fiyat: "25.000 TL ",
         m2: "90",
         oda: "Bölmeli 3 Oda",
         konum: "İzmit Merkez",
@@ -76,9 +74,7 @@ const ilanVerileri = {
     }
 };
 
-// ==========================================
 // 2. SAYFA YÜKLENDİĞİNDE ÇALIŞACAK İŞLEMLER
-// ==========================================
 document.addEventListener('DOMContentLoaded', function() {
 
     // --- A. İLANLAR SAYFASI: GERÇEK FİLTRELEME İŞLEMİ ---
@@ -115,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // Geri Bildirim (Feedback) kuralı için rozeti güncelle
+            //rozeti güncelle
             const badge = document.querySelector('.badge.bg-primary');
             if(badge) {
                 badge.textContent = gosterilenSayi + " İlan Bulundu";
@@ -158,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // --- D. FAVORİLER (LOCAL STORAGE) İŞLEMİ ---
+    // --- D. FAVORİLER İŞLEMİ ---
     
     // 1. Tarayıcı hafızasından favorileri getiren fonksiyon
     function favorileriGetir() {
@@ -176,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function favoriArayuzunuGuncelle() {
         const favoriler = favorileriGetir();
         
-        // Menüdeki kırmızı sayacı güncelle (Geri Bildirim Kuralı)[cite: 1]
+        // Menüdeki kırmızı sayacı güncelle
         const favoriSayaci = document.getElementById('favoriSayaci');
         if(favoriSayaci) {
             favoriSayaci.textContent = favoriler.length;
@@ -236,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Sayfa her yüklendiğinde sayacı ve çekmeceyi kontrol et
     favoriArayuzunuGuncelle();
 
-    // 5. Detay sayfasındaki "Favoriye Ekle" butonuna basılma olayı (Geri Bildirim Kuralı)[cite: 1]
+    // 5. Detay sayfasındaki "Favoriye Ekle" butonuna basılma olayı
     const favoriyeEkleBtn = document.getElementById('favoriyeEkleBtn');
     if(favoriyeEkleBtn && document.getElementById('detayBaslik')) {
         const urlParams = new URLSearchParams(window.location.search);

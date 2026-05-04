@@ -12,7 +12,7 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
-        <!-- ... Aynı navbar ... -->
+        <!-- ... Menü navbar ... -->
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">KÖRFEZ EMLAK</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -22,7 +22,6 @@
                <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
                     <li class="nav-item"><a class="nav-link" href="ilanlar.html">Tüm İlanlar</a></li>
-                    <!-- YENİ EKLENEN FAVORİLER BUTONU -->
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#favorilerOffcanvas">
                             Favorilerim <span class="badge bg-danger rounded-pill" id="favoriSayaci">0</span>
@@ -55,10 +54,7 @@
                     </div>
                     <!-- Gönder ve Temizle Butonları -->
                     <div class="d-flex gap-3 mt-4">
-                        <!-- Gönder Butonu -->
                         <button type="submit" class="btn btn-primary w-75 fw-bold py-2">Mesajı Gönder</button>
-
-                        <!-- Clean (Temizle) Butonu -->
                         <button type="reset" class="btn btn-outline-danger w-25 fw-bold py-2">Temizle</button>
                     </div>
                 </form>
@@ -71,14 +67,14 @@
                 <p><strong>Telefon:</strong> 0 (264) 123 45 67</p>
                 <p><strong>E-Posta:</strong> bilgi@korfezemlakproje.com</p>
                 
-                <!-- Google Maps Embed Kodu (Örnek) -->
+                <!-- Google Maps -->
                 <div class="ratio ratio-16x9 mt-4 shadow-sm">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.276949021665!2d30.323530615405814!3d40.73397987932971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ccb2b4f9797d13%3A0x1d47102cd38d8272!2sSakarya%20University!5e0!3m2!1sen!2str!4v1682944000000!5m2!1sen!2str" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Başarılı Gönderim Açılır Penceresi (Modal) -->
+    <!-- Başarılı Gönderim Açılır Penceresi -->
     <div class="modal fade" id="basariModali" tabindex="-1" aria-labelledby="basariModaliLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content text-center p-4">
@@ -92,33 +88,26 @@
         </div>
     </div>
 
-    <!-- Favoriler Çekmecesi (Offcanvas) -->
-    <!-- ADIM 1: Ana kapsayıcı div'e style eklendi (Arkaplan lacivert, yazı beyaz) -->
+    <!-- Favoriler Çekmecesi -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="favorilerOffcanvas" aria-labelledby="favorilerOffcanvasLabel" style="background-color: var(--primary-dark); color: white;">
-        
-        <!-- ADIM 2: Header kısmındaki bg-light silindi, alt çizgi rengi altın yapıldı -->
         <div class="offcanvas-header border-bottom" style="border-color: var(--accent-gold) !important;">
             
-            <!-- ADIM 3: Başlık yazısı ve ikon altın rengine boyandı -->
             <h5 class="offcanvas-title fw-bold" id="favorilerOffcanvasLabel" style="color: var(--accent-gold);">
                 <i class="bi bi-heart-fill"></i> Favorilerim
             </h5>
-            
-            <!-- ADIM 4: Kapatma çarpısı (X) koyu arka planda görünmesi için beyaz yapıldı (btn-close-white eklendi) -->
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Kapat"></button>
         </div>
         
         <div class="offcanvas-body" id="favorilerListesi">
-            <!-- JavaScript buraya favori ilanları otomatik çizecek -->
             <p class="text-center mt-5">
-                <span style="color: #C5A059 !important; font-weight: 600; opacity: 1 !important;">Henüz favoriye eklediğiniz bir ilan bulunmuyor.</span>
+                <span style="color: #C5A059; font-weight: 600;">Henüz favoriye eklediğiniz bir ilan bulunmuyor.</span>
             </p>
         </div>
     </div>
 
     <footer class="bg-dark text-white text-center py-4 mt-auto">
         <div class="container">
-            <p class="mb-0">© 2026 Körfez Emlak Projesi. Tüm Hakları Saklıdır.</p>
+            <p class="mb-0"> 2026 Körfez Emlak Projesi. Tüm Hakları Saklıdır.</p>
         </div>
     </footer>
 

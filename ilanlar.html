@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <!-- Menü (Navbar) -->
+    <!-- Menü Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">KÖRFEZ EMLAK</a>
@@ -22,7 +22,6 @@
                     <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
                     <li class="nav-item"><a class="nav-link" href="ilanlar.html">Tüm İlanlar</a></li>
-                    <!-- YENİ EKLENEN FAVORİLER BUTONU -->
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#favorilerOffcanvas">
                             Favorilerim <span class="badge bg-danger rounded-pill" id="favoriSayaci">0</span>
@@ -69,10 +68,10 @@
             </form>
         </div>
     
-        <!-- İlanlar Izgarası (row-cols-md-2 row-cols-lg-4 ile her satırda 4 ilan) -->
+        <!-- İlanlar Izgarası -->
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
             
-            <!-- İlan 1 (Detay Sayfasına Bağlı) -->
+            <!-- İlan 1 -->
             <div class="col filter-item" data-konum="yahyakaptan" data-tip="daire">
                 <div class="card h-100 shadow-sm property-card">
                     <img src="img/ev1.jpg" class="card-img-top" alt="Ev 1">
@@ -138,7 +137,7 @@
                     <img src="img/ev5.jpg" class="card-img-top" alt="Ev 5">
                     <div class="card-body">
                         <h6 class="card-title fw-bold">İzmit Merkez Ofis</h6>
-                        <h5 class="text-primary fw-bold mt-2">25.000 TL / Ay</h5>
+                        <h5 class="text-primary fw-bold mt-2">25.000 TL</h5>
                         <p class="card-text text-muted small">Çarşı içi, ulaşıma yakın iş yeri.</p>
                     </div>
                     <div class="card-footer bg-white border-top-0 p-3 pt-0">
@@ -195,26 +194,18 @@
         </div>
     </div>
 
-    <!-- Favoriler Çekmecesi (Offcanvas) -->
-    <!-- ADIM 1: Ana kapsayıcı div'e style eklendi (Arkaplan lacivert, yazı beyaz) -->
+    <!-- Favoriler Çekmecesi -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="favorilerOffcanvas" aria-labelledby="favorilerOffcanvasLabel" style="background-color: var(--primary-dark); color: white;">
         
-        <!-- ADIM 2: Header kısmındaki bg-light silindi, alt çizgi rengi altın yapıldı -->
         <div class="offcanvas-header border-bottom" style="border-color: var(--accent-gold) !important;">
-            
-            <!-- ADIM 3: Başlık yazısı ve ikon altın rengine boyandı -->
             <h5 class="offcanvas-title fw-bold" id="favorilerOffcanvasLabel" style="color: var(--accent-gold);">
                 <i class="bi bi-heart-fill"></i> Favorilerim
             </h5>
-            
-            <!-- ADIM 4: Kapatma çarpısı (X) koyu arka planda görünmesi için beyaz yapıldı (btn-close-white eklendi) -->
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Kapat"></button>
         </div>
-        
         <div class="offcanvas-body" id="favorilerListesi">
-            <!-- JavaScript buraya favori ilanları otomatik çizecek -->
             <p class="text-center mt-5">
-                <span style="color: #C5A059 !important; font-weight: 600; opacity: 1 !important;">Henüz favoriye eklediğiniz bir ilan bulunmuyor.</span>
+                <span style="color: #C5A059; font-weight: 600;">Henüz favoriye eklediğiniz bir ilan bulunmuyor.</span>
             </p>
         </div>
     </div>
@@ -222,7 +213,7 @@
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4 mt-auto">
         <div class="container">
-            <p class="mb-0">© 2026 Körfez Emlak Projesi. Tüm Hakları Saklıdır.</p>
+            <p class="mb-0"> 2026 Körfez Emlak Projesi. Tüm Hakları Saklıdır.</p>
         </div>
     </footer>
 
